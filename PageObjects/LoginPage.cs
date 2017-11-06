@@ -24,13 +24,8 @@ namespace PageObjects
         public IWebElement progressbar;
               
 
-        String pageUrl = "https://mail.google.com/";
-
-        /*public LoginPage()
-        {
-            PageFactory.InitElements(driver, this);
-        }*/
-            
+        String pageUrl = "https://mail.google.com/";             
+           
         
         public void OpenPageUrl()
         {
