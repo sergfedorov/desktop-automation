@@ -7,20 +7,20 @@ namespace PageObjects
 {
     class Driver
     {
-        private static IWebDriver driver;
+        private static IWebDriver webdriverInstance;
 
         private Driver() { }
 
         public static IWebDriver GetDriver()
         {
-            if (driver == null)
+            if (webdriverInstance == null)
             {
-                driver = new ChromeDriver();
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                driver.Manage().Window.Maximize();
+                webdriverInstance = new ChromeDriver();
+                webdriverInstance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+                webdriverInstance.Manage().Window.Maximize();
             }
 
-            return driver;
+            return webdriverInstance;
         }
 
     }

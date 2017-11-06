@@ -7,15 +7,15 @@ namespace PageObjects
 {
     public abstract class BasePage
     {
-        protected IWebDriver driver;
-        protected WebDriverWait customWait;
+        protected IWebDriver WebDriver;
+        protected WebDriverWait CustomWait;
 
 
         public BasePage()
         {
-            this.driver = Driver.GetDriver();
-            PageFactory.InitElements(driver, this);            
-            this.customWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            this.WebDriver = Driver.GetDriver();
+            PageFactory.InitElements(WebDriver, this);            
+            this.CustomWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
         }
 
         protected void FillTheField(IWebElement fieldElement, String data)

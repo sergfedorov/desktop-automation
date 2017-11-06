@@ -20,16 +20,14 @@ namespace PageObjects
         [FindsBy(How = How.Id, Using = "passwordNext")]
         public IWebElement PasswordNextButton;
 
-        [FindsBy(How = How.XPath, Using = "//div[@role='progressbar']")]
-        public IWebElement progressbar;
-              
+        By progressbar = By.XPath("//div[@role='progressbar']");
 
         String pageUrl = "https://mail.google.com/";             
            
         
         public void OpenPageUrl()
         {
-            driver.Navigate().GoToUrl(pageUrl);
+            WebDriver.Navigate().GoToUrl(pageUrl);
         }
 
         public void FillOutEmailField(String userEmail)
@@ -58,12 +56,12 @@ namespace PageObjects
             ClickEmailNextButton();
             PasswordField.SendKeys(userPassword);
 
-            customWait.
-                Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@role='progressbar']")));                   
+            CustomWait.
+                Until(ExpectedConditions.InvisibilityOfElementLocated(progressbar));                   
 
             ClickPasswordNextButton();
 
-            customWait.
+            CustomWait.
                 Until(ExpectedConditions.TitleContains("Inbox"));
 
         }

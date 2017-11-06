@@ -12,45 +12,44 @@ namespace PageObjects
         //String pageUrl = "https://mail.google.com/mail/u/0/#inbox";
 
         [FindsBy(How = How.XPath, Using = "//div[contains(text(), 'COMPOSE')]")]
-        public IWebElement composeNewEmail;
+        public IWebElement ComposeNewEmail;
 
         [FindsBy(How = How.Name, Using = "to")]
-        public IWebElement recipientField;
+        public IWebElement RecipientField;
 
         [FindsBy(How = How.Name, Using = "subjectbox")]
-        public IWebElement subjectField;
+        public IWebElement SubjectField;
 
         [FindsBy(How = How.XPath, Using = "//div[@aria-label='Message Body']")]
-        public IWebElement messageBodyField;
+        public IWebElement MessageBodyField;
 
         [FindsBy(How = How.XPath, Using = "//div[contains(text(), 'Send')]")]
-        public IWebElement sendEmailButton;
-
-        [FindsBy(How = How.Id, Using = "link_vsm")]
-        public IWebElement emailSentLabel;
+        public IWebElement SendEmailButton;
 
         [FindsBy(How = How.LinkText, Using = "Sent Mail")]
-        public IWebElement sentMailSectionLink;
+        public IWebElement SentMailSectionLink;
+
+        public By EmailSentLabel = By.Id("link_vsm");
 
 
-        public void sendNewEmail(String recipientEmail, String emailSubject, String emailBody)
+        public void SendNewEmail(String recipientEmail, String emailSubject, String emailBody)
         {
-            composeNewEmail.Click();
-            recipientField.SendKeys(recipientEmail);
-            subjectField.SendKeys(emailSubject);
-            messageBodyField.SendKeys(emailBody);
-            sendEmailButton.Click();
+            ComposeNewEmail.Click();
+            RecipientField.SendKeys(recipientEmail);
+            SubjectField.SendKeys(emailSubject);
+            MessageBodyField.SendKeys(emailBody);
+            SendEmailButton.Click();
 
-            customWait.
-               Until(ExpectedConditions.ElementIsVisible(By.Id("link_vsm")));                     
+            CustomWait.
+               Until(ExpectedConditions.ElementIsVisible(EmailSentLabel));                     
 
         }
 
         public void GoToSentMailSection()
         {
-            sentMailSectionLink.Click();
+            SentMailSectionLink.Click();
 
-            customWait.
+            CustomWait.
                Until(ExpectedConditions.TitleContains("Sent Mail"));
             
         }
