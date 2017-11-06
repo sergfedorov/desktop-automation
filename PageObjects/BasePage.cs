@@ -14,8 +14,7 @@ namespace PageObjects
         public BasePage()
         {
             this.driver = Driver.GetDriver();
-            PageFactory.InitElements(driver, this);
-            //PageFactory.InitElements(Driver.GetDriver(), new Locators.InboxPageLocators());
+            PageFactory.InitElements(driver, this);            
             this.customWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
         }
 
