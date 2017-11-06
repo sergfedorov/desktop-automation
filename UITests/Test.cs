@@ -4,7 +4,7 @@ using PageObjects;
 namespace UITests
 
 {
-    class Test
+    class Test : BaseTest
     {
 
         [Test]

@@ -5,7 +5,7 @@ using System;
 
 namespace PageObjects
 {
-    class Driver
+    public class Driver
     {
         private static IWebDriver webdriverInstance;
 
@@ -16,11 +16,19 @@ namespace PageObjects
             if (webdriverInstance == null)
             {
                 webdriverInstance = new ChromeDriver();
-                webdriverInstance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                webdriverInstance.Manage().Window.Maximize();
+                
             }
 
             return webdriverInstance;
+        }
+
+        public static void BrowserQuit()
+        {
+            if (webdriverInstance != null)
+            {
+                webdriverInstance.Quit();
+                webdriverInstance = null;
+            }
         }
 
     }
