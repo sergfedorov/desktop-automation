@@ -13,7 +13,7 @@ namespace PageObjects
 
         public BasePage()
         {
-            this.WebDriver = Driver.GetDriver();
+            this.WebDriver = Driver.GetWebDriver();
             PageFactory.InitElements(WebDriver, this);            
             this.CustomWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
         }

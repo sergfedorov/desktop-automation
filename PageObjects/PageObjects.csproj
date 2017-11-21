@@ -50,7 +50,6 @@
     <Compile Include="BasePage.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="InboxPage.cs" />
-    <Compile Include="Locators.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

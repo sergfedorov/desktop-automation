@@ -6,13 +6,12 @@ using System;
 namespace PageObjects
 {
     public class Driver
-    {
-        /*comment for branching*/
+    {        
         private static IWebDriver webdriverInstance;
 
         private Driver() { }
 
-        public static IWebDriver GetDriver()
+        public static IWebDriver GetWebDriver()
         {
             if (webdriverInstance == null)
             {

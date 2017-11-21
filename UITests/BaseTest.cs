@@ -10,8 +10,8 @@ namespace UITests
         [SetUp]
         public void BrowserSetup()
         {
-            Driver.GetDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            Driver.GetDriver().Manage().Window.Maximize();
+            Driver.GetWebDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Driver.GetWebDriver().Manage().Window.Maximize();
         }
 
         [TearDown]
