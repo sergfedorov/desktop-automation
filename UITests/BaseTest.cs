@@ -7,17 +7,19 @@ namespace UITests
 {
     class BaseTest
     {
-        [SetUp]
+        [OneTimeSetUp]
         public void BrowserSetup()
         {
             Driver.GetWebDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             Driver.GetWebDriver().Manage().Window.Maximize();
         }
 
-        [TearDown]
+        [OneTimeTearDown]
         public void BrowserClose()
         {
             Driver.BrowserQuit();
+            Driver.DesktopDriverQuit();
         }
+    
     }
 }
