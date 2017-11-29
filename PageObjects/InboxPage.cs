@@ -6,7 +6,7 @@ using System;
 
 namespace PageObjects
 {
-    public class InboxPage : BasePage
+    public class InboxPage : BaseWebPage
     {
 
         //String pageUrl = "https://mail.google.com/mail/u/0/#inbox";

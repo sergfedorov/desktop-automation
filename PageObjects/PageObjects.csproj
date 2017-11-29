@@ -51,6 +51,7 @@
     <Compile Include="Driver.cs" />
     <Compile Include="InboxPage.cs" />
     <Compile Include="LoginPage.cs" />
+    <Compile Include="OutlookWindowPage.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

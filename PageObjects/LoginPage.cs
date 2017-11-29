@@ -5,7 +5,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace PageObjects
 {
-    public class LoginPage : BasePage
+    public class LoginPage : BaseWebPage
     {
 
         [FindsBy(How = How.Id, Using = "identifierId")]

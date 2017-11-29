@@ -5,23 +5,18 @@ using System;
 
 namespace PageObjects
 {
-    public abstract class BasePage
+    public abstract class BaseWebPage
     {
         protected IWebDriver WebDriver;
         protected WebDriverWait CustomWait;
 
 
-        public BasePage()
+        public BaseWebPage()
         {
             this.WebDriver = Driver.GetWebDriver();
-            PageFactory.InitElements(WebDriver, this);            
+            PageFactory.InitElements(WebDriver, this);
             this.CustomWait = new WebDriverWait(WebDriver, TimeSpan.FromSeconds(5));
-        }
-
-        protected void FillTheField(IWebElement fieldElement, String data)
-        {
-            fieldElement.SendKeys(data);
-        }
+        }        
                 
     }
 }

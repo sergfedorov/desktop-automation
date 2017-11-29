@@ -4,7 +4,7 @@ using System;
 
 namespace PageObjects
 {
-    public class SentMailPage : BasePage
+    public class SentMailPage : BaseWebPage
     {
 
         //String pageUrl = "https://mail.google.com/mail/u/0/#sent";
