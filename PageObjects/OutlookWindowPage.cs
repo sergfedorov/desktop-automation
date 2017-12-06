@@ -17,7 +17,7 @@ namespace PageObjects
 
         public OutlookWindowPage()
         {
-            this.desktopDriver = Driver.GetDesktopDriver();
+            this.desktopDriver = Driver.GetWiniumDesktopDriver();
             PageFactory.InitElements(desktopDriver, this);
         }
        
@@ -89,6 +89,8 @@ namespace PageObjects
         public void ClickSpecificEmail(String emailNameContent1, String emailNameContent2)
         {
             IReadOnlyCollection<IWebElement> list = outlookWindow.FindElements(mailContainerFromList);
+            int lc = list.Count();
+            int i = 1;
             foreach (IWebElement element in list)
             {
                 if (element.GetAttribute("Name").Contains(emailNameContent1) 
@@ -97,7 +99,9 @@ namespace PageObjects
                     element.Click();
                     break;
                 }
-                throw new NoSuchElementException("Target email was not found in Inbox folder");
+                i++;
+                if (lc == i)
+                    throw new NoSuchElementException("Target email was not found in Inbox folder");                
             }
         }
 

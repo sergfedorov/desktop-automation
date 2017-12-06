@@ -19,6 +19,7 @@ namespace UITests
         {
             Driver.BrowserQuit();
             Driver.DesktopDriverQuit();
+            Driver.WinAppDriverQuit();
         }
     
     }

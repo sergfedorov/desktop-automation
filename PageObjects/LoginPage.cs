@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace PageObjects
 {
@@ -15,6 +16,7 @@ namespace PageObjects
         public IWebElement EmailNextButton;
 
         [FindsBy(How = How.Name, Using = "password")]
+        //[FindsBy(How = How.XPath, Using = "//input[@type='password']")]        
         public IWebElement PasswordField;
 
         [FindsBy(How = How.Id, Using = "passwordNext")]
@@ -54,6 +56,7 @@ namespace PageObjects
         {
             EmailField.SendKeys(userName);
             ClickEmailNextButton();
+            //Thread.Sleep(2000);
             PasswordField.SendKeys(userPassword);
 
             CustomWait.
