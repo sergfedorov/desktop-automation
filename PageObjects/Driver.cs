@@ -4,6 +4,9 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Diagnostics;
+using System.Threading;
+using System.Windows.Automation;
 
 namespace PageObjects
 {
@@ -12,7 +15,6 @@ namespace PageObjects
         private static IWebDriver webDriverInstance;
         private static RemoteWebDriver winiumDesktopDriverInstance;
         private static WindowsDriver<WindowsElement> winAppDriverInstance;
-
 
         private Driver() { }
 
@@ -55,6 +57,14 @@ namespace PageObjects
             //appCapabilities.SetCapability("deviceName", "WindowsPC");
             return appCapabilities;
         }
+
+        public static AutomationElement GetOutlookWindow()
+        {            
+            AutomationElement desktop = AutomationElement.RootElement;
+            return desktop.FindFirst(
+                TreeScope.Children,
+                new PropertyCondition(AutomationElement.NameProperty, "Inbox - SFedorov@lohika.com - Outlook"));
+        }        
 
         public static void BrowserQuit()
         {
