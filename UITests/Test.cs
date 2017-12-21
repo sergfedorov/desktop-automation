@@ -52,7 +52,7 @@ namespace UITests
             Assert.IsTrue(windowsMailPage.GetNameFirstEmailInSentItems().Contains("Hello Desktop Automation Course"));
         }
 
-        [Test, Description("MS UI Automation Test")]
+        [Test, Description("MS UI Automation Test"), Ignore("")]
         public void OpenOutlookAndReplyToEmailUsingMSUITest()
         {
             Process.Start("outlook.exe");
@@ -71,5 +71,32 @@ namespace UITests
 
             Assert.IsTrue(outlookWindow.GetFirstEmailName().Contains("Hello Desktop Automation Course"));
         }
+
+        [Test, Description("FlaUI / White Test")]
+        public void DrawPictureAndAttachItToReplyEmail()
+        {
+            PaintWindow paintWindow = new PaintWindow();
+            OutlookWindowWhite outlookWindowWhite = new OutlookWindowWhite();
+            string fileName = "mypaintfile";
+
+            // Draw the picture
+            paintWindow.PaintStart();
+            paintWindow.DrawRectangle();
+            paintWindow.SaveFile(fileName);
+            paintWindow.ClosePaintWindow();
+
+            // Reply to email       
+            outlookWindowWhite.OutlookStart();
+            outlookWindowWhite.SelectTargetEmail("Mike Mikon");
+            outlookWindowWhite.EnterReplyMessage("Email text by White");
+            outlookWindowWhite.AttachFile(fileName);
+            outlookWindowWhite.ClickSendButton();
+            outlookWindowWhite.OpenSentItemsSection();
+            outlookWindowWhite.SelectTargetEmail("Mike Mikon");
+
+            Assert.True(outlookWindowWhite.GetFirstEmailText().Contains("Hello Desktop Automation Course"));
+        }
+
+
     }
 }
