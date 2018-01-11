@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjects", "PageObjects\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITests", "UITests\UITests.csproj", "{1D26090F-746F-446F-B3B6-4A9E8AB911BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit", "..\DesktopAutomation.Tasks\NUnit\NUnit.csproj", "{74429BA0-3CE6-4D93-9D33-EAF3A6143236}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1D26090F-746F-446F-B3B6-4A9E8AB911BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D26090F-746F-446F-B3B6-4A9E8AB911BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D26090F-746F-446F-B3B6-4A9E8AB911BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74429BA0-3CE6-4D93-9D33-EAF3A6143236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74429BA0-3CE6-4D93-9D33-EAF3A6143236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74429BA0-3CE6-4D93-9D33-EAF3A6143236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74429BA0-3CE6-4D93-9D33-EAF3A6143236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
